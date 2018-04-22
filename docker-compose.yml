@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web1:
+    image: twollmann/tobias-wollmann.com
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./ssl/fullchain.pem:/etc/nginx/fullchain.pem:ro
+      - ./ssl/privkey.pem:/etc/nginx/privkey.pem:ro
+      - ./ssl/dhparam.pem:/etc/nginx/dhparam.pem:ro
+      - ./ssl/chain.pem:/etc/nginx/chain.pem:ro
